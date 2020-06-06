@@ -17,7 +17,7 @@ public class StudentServlet extends HttpServlet{
 	
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException
 	{
-		System.out.print(studentDetails);
+		System.out.println(studentDetails);
 		String id = request.getParameter("id");
 		if(studentDetails.containsKey(id))
 		{
@@ -32,7 +32,7 @@ public class StudentServlet extends HttpServlet{
 		String id = request.getParameter("id");
 		String name = request.getParameter("name");
 		studentDetails.put(id, name);
-		System.out.print(studentDetails);
+		System.out.println(studentDetails);
 	}
 	
 }
