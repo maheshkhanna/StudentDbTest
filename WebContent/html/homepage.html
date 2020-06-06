@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Student Db</title>
+</head>
+<script type="text/javascript">
+	function store()
+	{
+		var studentId = document.getElementById("studentId").value;
+		var studentName = document.getElementById("studentName").value;
+		var xmlhttp = new XMLHttpRequest();
+	        xmlhttp.onreadystatechange = function() {
+	            if (this.readyState == 4 && this.status == 200) {
+	            
+	        }
+	    };
+	    xmlhttp.open("POST", "/StudentDbTest/store?id="+studentId+"&name="+studentName , true);
+	    xmlhttp.send(); 
+	}
+	
+	function get()
+	{
+		var studentId = document.getElementById("studentId").value;
+		var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            	document.getElementById("studentName").value = this.responseText;
+        }
+    };
+    xmlhttp.open("GET", "/StudentDbTest/get?id="+studentId , true);
+    xmlhttp.send(); 
+	}
+	
+</script>
+<body>
+	<input id="studentId" type="text"/>
+	<input id="studentName" type="text"/>
+	<button onClick="store()">Store</button>
+	<button onClick="get()">Get</button>
+</body>
+</html>
